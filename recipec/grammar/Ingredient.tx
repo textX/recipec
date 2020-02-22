@@ -1,15 +1,26 @@
 import Base
 
-Model: ingredientTypes+=IngredientType+;
-
-IngredientType: IngredientTypeDef | IngredientAlias;
-
-IngredientAlias: "alias" name=IDEXT '=' extends=[IngredientTypeDef|IDEXT] ";";
-
-IngredientTypeDef: "ingredient" name=IDEXT ("(" "inherits" "from" extends=[IngredientTypeDef|IDEXT] ")")? "{"
-    units+=Unit*
-"}"
+Model:
+    ingredientTypes+=IngredientType
 ;
 
-Unit: "unit" weight=FLOAT name=ID;
+IngredientType:
+    IngredientTypeDef | IngredientAlias
+;
+
+IngredientAlias:
+    'alias' name=IDEXT '=' extends=[IngredientTypeDef|IDEXT] ';'
+;
+
+IngredientTypeDef:
+    "ingredient" name=IDEXT
+    ("(" "inherits" "from" extends=[IngredientTypeDef|IDEXT] ')')?
+    '{'
+        units*=Unit
+    '}'
+;
+
+Unit:
+    'unit' weight=FLOAT name=ID
+;
 
