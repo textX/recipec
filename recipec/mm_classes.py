@@ -64,5 +64,5 @@ class PlanEntry(ModelItemBase):
     def get_recipe(self):
         assert len(self._tx_loaded_models) == 1, \
             "no wildcards for recipes supported"
-        recipe = self._tx_loaded_models[0].recipe
+        recipe = self._tx_loaded_models[0]
         return recipe

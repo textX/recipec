@@ -8,7 +8,7 @@ from os.path import dirname, abspath, join
 def plan_generator(metamodel, model, output_path, overwrite, debug,
                    **custom_args):
     output_file = get_output_filename(model._tx_filename, output_path, 'md')
-    gen_file(model.file_name, output_file,
+    gen_file(model._tx_filename, output_file,
              partial(model_export, model, output_file),
              overwrite)
 
