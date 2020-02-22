@@ -6,14 +6,13 @@ Recipe:
     title=LINE
     persons=[c.Persons] ':' person_count=FLOAT
     SEPARATOR
-    ingredients+=Ingredient+
+    ingredients+=Ingredient
     SEPARATOR
     description=TEXT
 ;
 
 Ingredient:
-    '-' count=FLOAT
-    ('-' count_max=FLOAT)?
+    '-' count=FLOAT ('-' count_max=FLOAT)?
     unit=[i.Unit]
     type=[i.IngredientType|IDEXT]
     ('(' description=/[^)]+/ ')')?
