@@ -1,7 +1,10 @@
 from __future__ import unicode_literals
-from textx import metamodel_for_language
-from os.path import join, dirname, abspath
+
+from os.path import abspath, dirname, join
+
 import pytest
+
+from textx import metamodel_for_language
 
 
 def test_lang_config():

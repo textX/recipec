@@ -1,12 +1,11 @@
 from __future__ import unicode_literals
-from textx import language
-from os.path import dirname, abspath, join
-from textx import metamodel_from_file
+
+from os.path import abspath, dirname, join
+
 import textx.scoping.providers as scoping_providers
-
-
-from recipec.mm_classes import IngredientTypeDef, Ingredient, \
-    IngredientAlias, PlanEntry
+from recipec.mm_classes import (
+    Ingredient, IngredientAlias, IngredientTypeDef, PlanEntry)
+from textx import language, metamodel_from_file
 
 
 def get_grammar_path(name):
