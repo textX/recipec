@@ -1,7 +1,8 @@
 from functools import partial
-from textx import (generator, get_children_of_type, get_output_filename,
-                   gen_file)
-from os.path import dirname, abspath, join
+from os.path import abspath, dirname, join
+
+from textx import (gen_file, generator, get_children_of_type,
+                   get_output_filename)
 
 
 @generator('recipe-plan', 'md')
